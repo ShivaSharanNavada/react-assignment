@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navbar } from "./components/navbar";
+import { NavBar } from "./components/navbar";
 import { Shop } from "./pages/shop/shop";
 import { LoginForm } from "./pages/user/login";
 import { Cart } from "./pages/cart/cart";
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <ShopContextProvider>
         <Router>
-          <Navbar />
+          <NavBar />
           <Routes>
           <Route path="/" element={<Shop />} />
           <Route path="/login" element={<LoginForm />} />

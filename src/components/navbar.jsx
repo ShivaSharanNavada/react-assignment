@@ -1,11 +1,10 @@
 import React from "react";
-import { Link ,useNavigate} from "react-router-dom";
-import { ShoppingCart,Heart } from "phosphor-react";
+import { Link, useNavigate } from "react-router-dom";
+import { ShoppingCart, Heart } from "phosphor-react";
 import "./navbar.css";
 
-
-export const Navbar = () => {
-  const navigate=useNavigate();
+export const NavBar = () => {
+  const navigate = useNavigate();
   const userName = JSON.parse(localStorage.getItem("user"));
   const logged = localStorage.getItem("loggedin");
   const handleLogout = (e) => {
@@ -16,6 +15,7 @@ export const Navbar = () => {
 
   return (
     <>
+      
       <div className="navbar">
         <div></div>
         <div className="links">
