@@ -21,10 +21,10 @@ export const Navbar = () => {
         <div className="links">
           <Link to="/"> SHOP </Link>
           <Link to="/whislist">
-          <Heart size={32} />Whislist
+          <Heart size={32} />
           </Link>
           <Link to="/cart">
-            <ShoppingCart size={32} />Cart
+            <ShoppingCart size={32} />
           </Link>
           {logged ? (
             <Link onClick={handleLogout}>LOGOUT</Link>
