@@ -59,6 +59,7 @@
     place-items: center;
     height: auto;
   }
+
 }
 
 @media screen and (max-width: 1000px) {
