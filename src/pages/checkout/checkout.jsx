@@ -1,21 +1,29 @@
-import React from "react";
+import React ,{ useContext } from "react";
 import "./checkcss.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
+import { ShopContext } from "../../context/shop-context";
 
 export const Checkout = () => {
   const logged = localStorage.getItem("loggedin");
 
+  const { getTotalCartAmount } = useContext(ShopContext);
+  const totalAmount = getTotalCartAmount();
+
   const navigate = useNavigate();
   const check = () => {
-    alert("Order placed successfully!!!!")
-    navigate("/")
+    alert("Order placed successfully!!!!");
+    navigate("/");
   };
 
   return (
     <div className="vh-100 d-flex justify-content-center align-items-center">
       <div class="col-md-8 order-md-1">
-        <h4 class="mb-3">Billing address</h4>
+      <h3 class="col-md-6 mb-3"><b>Billing address</b></h3>
+        <div class="row">
+          <h4 class="col-md-6 mb-3">TOTAL:</h4>
+          <h4 class="col-md-6 mb-3">${totalAmount}.0</h4>
+        </div>
         <form class="form-control" onSubmit={check}>
           <div class="row">
             <div class="col-md-6 mb-3">
@@ -42,16 +50,16 @@ export const Checkout = () => {
             </div>
           </div>
           <div class="mb-3">
-              <label for="lastName">Phone</label>
-              <input
-                type="number"
-                class="form-control"
-                id="number"
-                placeholder=""
-                //value=""
-                required
-              />
-            </div>
+            <label for="lastName">Phone</label>
+            <input
+              type="number"
+              class="form-control"
+              id="number"
+              placeholder=""
+              //value=""
+              required
+            />
+          </div>
           <div class="mb-3">
             <label for="email">
               Email <span class="text-muted">(Optional)</span>
