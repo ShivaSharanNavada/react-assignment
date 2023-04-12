@@ -1,16 +1,15 @@
 import React from "react";
 import "./checkcss.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
 
 export const Checkout = () => {
   const logged = localStorage.getItem("loggedin");
 
+  const navigate = useNavigate();
   const check = () => {
-    {
-      logged
-        ? alert("Order placed successfully!!!!")
-        : alert("Login before checkout!!!!");
-    }
+    alert("Order placed successfully!!!!")
+    navigate("/")
   };
 
   return (
@@ -42,7 +41,17 @@ export const Checkout = () => {
               />
             </div>
           </div>
-
+          <div class="mb-3">
+              <label for="lastName">Phone</label>
+              <input
+                type="number"
+                class="form-control"
+                id="number"
+                placeholder=""
+                //value=""
+                required
+              />
+            </div>
           <div class="mb-3">
             <label for="email">
               Email <span class="text-muted">(Optional)</span>

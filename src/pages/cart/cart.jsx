@@ -6,12 +6,26 @@ import { useNavigate } from "react-router-dom";
 
 import "./cart.css";
 export const Cart = () => {
+
+  const navigate = useNavigate();
+
   const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
 
+  const logged = localStorage.getItem("loggedin");
 
+  const check = () => {
+    {
+      if(logged){
+        navigate("/checkout")
+      }else{
+         alert("Login before checkout!!!!");
+        navigate("/login")
+      }
+    }
+  };
 
-  const navigate = useNavigate();
+  
 
   return (
     <div className="cart">
@@ -31,10 +45,11 @@ export const Cart = () => {
           <p> <h3>Subtotal: ${totalAmount} </h3></p>
           <button className="Btn" onClick={() => navigate("/")}> Continue Shopping </button>
           <button className="Btn"
-            onClick={(e) => {
+            onClick={()=>check()}
+            /* {(e) => {
               //checkout();
               navigate("/checkout");
-            }}
+            }} */
           >
             {" "}
             Checkout{" "}
