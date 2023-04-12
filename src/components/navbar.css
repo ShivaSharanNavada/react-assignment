@@ -4,7 +4,7 @@
   background-color: rgb(19, 19, 19);
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: center; 
 }
 
 .links {
@@ -26,3 +26,16 @@
   margin-left: 20px;
   font-size: 25px;
 }
+
+@media screen and (max-width: 450px) {
+  .navbar{
+    width: 450px;
+  }
+}
+@media screen and (max-width: 765px) {
+  .navbar{
+    width: 765px;
+  }
+}
+    
+  

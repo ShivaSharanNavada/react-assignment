@@ -50,3 +50,24 @@
   margin: 10px;
   cursor: pointer;
 }
+
+
+@media screen and (max-width: 740px) {
+  .cart{
+    width: 740px;
+  }
+}
+
+@media screen and (max-width: 185px) {
+  .cartItem{
+    width: 185px;
+  }
+  .cart{
+    width: min-content;
+  }
+  .cartItem .description {
+    width: 100%;
+    font-size: 15px;
+  }
+  
+}
